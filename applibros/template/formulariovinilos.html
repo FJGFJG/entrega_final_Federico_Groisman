@@ -1,0 +1,28 @@
+{% extends "altaregistrado.html" %}
+{% load static %}
+
+{% block contenido %}
+    <form action="alta_vinilos" method="POST">
+        {% csrf_token %}
+        <p>Artista:</p>
+        <input type="text" name="artista" required>
+        <p>Año del vinilo:</p>
+        <input type="number" min=1000 max=2050 name="añovinilo" required>
+        <p>Título:</p>
+        <input type="text" name="nombrevinilo" required>  
+        <p>Precio (AR$):</p>
+        <input type="number" min=0 name="preciovinilo" required>  
+        
+        
+
+
+
+        <input type="submit" value="Enviar">
+
+
+    </form>
+    <a class="" href="{% url 'vinilos' %}">Ir a Vinilos</a>
+
+
+
+{% endblock %}

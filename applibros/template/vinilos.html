@@ -1,0 +1,48 @@
+{% extends "inicioregistrado.html" %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+    {% for n in vinilos %}
+    
+    {% endfor %}
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Artista</th>
+            <th scope="col">Año</th>
+            <th scope="col">Título</th>
+            <th scope="col">Precio (AR$)</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for n in vinilos %}
+        
+               
+
+          <tr>
+            <th scope="row">{{n.id}}</th>
+            <td>{{n.artista}}</td>
+            <td>{{n.añovinilo}}</td>
+            <td>{{n.nombrevinilo}}</td>
+            <td>{{n.preciovinilo}}</td>
+            <td><a href="{% url 'editarvinilos' n.id %}">Editar</a></td>
+            <td><a href="{% url 'eliminavinilos' n.id %}">Borrar</a></td>
+            
+        </tr>
+        {% endfor %}        
+
+       
+        </tbody>
+      </table>
+      <button>
+
+        <a href="alta_vinilos">Agregar otro vinilo</a>
+      </button>
+
+{% endblock %}

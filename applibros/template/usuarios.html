@@ -1,0 +1,50 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+    {% for n in usuarios %}
+    
+    {% endfor %}
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Mail</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Localidad</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Clave</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for n in usuarios %}
+        
+               
+
+          <tr>
+            <th scope="row">{{n.id}}</th>
+            <td>{{n.nombreusuario}}</td>
+            <td>{{n.apellidousuario}}</td>
+            <td>{{n.mail}}</td>
+            <td>{{n.edad}}</td>
+            <td>{{n.direccion}}</td>
+            <td>{{n.localidad}}</td>
+            <td>{{n.usuario}}</td>
+            <td>{{n.clave}}</td>
+            
+        </tr>
+        {% endfor %}        
+
+       
+        </tbody>
+      </table>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "inicioregistrado.html" %}
+{% load static %}
+
+{% block contenido %}
+    <form action="{% url 'editarmensajes' listamensajes.id %}" method="POST">
+        {% csrf_token %}
+        <p>Usuario:</p>
+        <input type="text" name="usuariomensaje" required>     
+        <p>Mensaje:</p>
+        <input type="text" name="comentario" required>
+                      
+
+        <input type="submit" value="Enviar">
+
+
+    </form>
+
+
+
+{% endblock %}

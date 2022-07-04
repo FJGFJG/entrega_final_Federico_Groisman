@@ -1,0 +1,45 @@
+{% extends "inicioregistrado.html" %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+    {% for n in listamensajes %}
+    
+    {% endfor %}
+
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Mensaje</th>
+
+          </tr>
+        </thead>
+        <tbody>
+            {% for n in listamensajes %}
+        
+               
+
+          <tr>
+            <th scope="row">{{n.id}}</th>
+            <td>{{n.usuariomensaje}}</td>
+            <td>{{n.comentario}}</td>
+            <td><a href="{% url 'editarmensajes' n.id %}">Editar</a></td>
+            <td><a href="{% url 'eliminamensajes' n.id %}">Borrar</a></td>
+            
+        </tr>
+        {% endfor %}        
+
+       
+        </tbody>
+      </table>
+      <button>
+
+        <a href="mensajes">Agregar otro mensaje</a>
+      </button>
+
+{% endblock %}

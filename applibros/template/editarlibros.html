@@ -1,0 +1,28 @@
+{% extends "inicioregistrado.html" %}
+{% load static %}
+
+{% block contenido %}
+    <form action="{% url 'editarlibros' libros.id %}" method="POST">
+        {% csrf_token %}
+        <p>Titulo:</p>
+        <input type="text" name="titulo" required>
+        <p>Año:</p>
+        <input type="number" min=1000 max=2050 name="año" required>
+        <p>Nombre del autor:</p>
+        <input type="text" name="nombreautor" required>     
+        <p>Apellido del Autor:</p>
+        <input type="text" name="apellidoautor" required> 
+        <p>Genero:</p>
+        <input type="text" name="genero" required> 
+        <p>Precio (AR$):</p>
+        <input type="number" min=0 name="precio" required> 
+                      
+
+        <input type="submit" value="Enviar">
+
+
+    </form>
+
+
+
+{% endblock %}

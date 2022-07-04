@@ -1,0 +1,26 @@
+{% extends "altaregistrado.html" %}
+{% load static %}
+
+{% block contenido %}
+
+
+    <h1> Dejanos tu comentario </h1>
+    <form action="mensajes" method="POST">
+        {% csrf_token %}
+        <p>Usuario: </p>
+        <input type="text" name="usuariomensaje" required>
+        <p>Dejá tu mensaje: </p> 
+        <input id="text1" style="WIDTH:1000px;HEIGHT:100PX" name="comentario" required>
+                      
+
+        <input type="submit" value="Enviar">
+
+
+
+    </form>
+    <a class="" href="{% url 'listamensajes' %}">Ir a Mensajes</a>
+
+
+
+
+{% endblock %}

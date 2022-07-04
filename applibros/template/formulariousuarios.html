@@ -1,0 +1,32 @@
+{% extends "altaregistrado.html" %}
+{% load static %}
+
+{% block contenido %}
+    <form action="alta_usuarios" method="POST">
+        {% csrf_token %}
+        <p>Nombre:</p>
+        <input type="text" name="nombreusuario" required>
+        <p>Apellido:</p>
+        <input type="text" name="apellidousuario" required>
+        <p>Mail:</p>
+        <input type="text" name="mail" required>  
+        <p>Edad:</p>
+        <input type="number" min=0 name="edad" required>    
+        <p>Dirección:</p>
+        <input type="text" name="direccion" required>   
+        <p>Localidad:</p>
+        <input type="text" name="localidad" required>   
+        <p>Usuario:</p>
+        <input type="text" name="usuario" required>   
+        <p>Clave (8 dígitos):</p>
+        <input type="number" min=00000000 max=99999999 name="clave" required>   
+                      
+
+        <input type="submit" value="Enviar">
+
+
+    </form>
+
+
+
+{% endblock %}

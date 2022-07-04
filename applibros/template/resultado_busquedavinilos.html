@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <a class="" href="{% url 'Inicio' %}">Volver al inicio</a>
+    <a class="" href="{% url 'buscar_vinilos' %}">Volver a buscar</a>
+<body>
+
+    {% if vinilos %}
+
+    <ul>
+    {% for vinilo in vinilos %}
+        <li>Artista: {{vinilo.artista}}</li>
+        <li>Año: {{vinilo.añovinilo}}</li>
+        <li>Título: {{vinilo.nombrevinilo}}</li>
+        <li>Precio en AR$: {{vinilo.preciovinilo}}</li>
+        <p>------------------------------------------<p>
+    {% endfor %}
+
+    </ul>
+    {% else %}
+        <p>No se encontraron vinilos</p>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% extends "inicioregistrado.html" %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+    {% for n in libros %}
+    
+    {% endfor %}
+
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Año</th>
+            <th scope="col">Nombre del autor</th>
+            <th scope="col">Apellido del autor</th>
+            <th scope="col">Género</th>
+            <th scope="col">Precio (AR$)</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for n in libros %}
+        
+               
+
+          <tr>
+            <th scope="row">{{n.id}}</th>
+            <td>{{n.titulo}}</td>
+            <td>{{n.año}}</td>
+            <td>{{n.nombreautor}}</td>
+            <td>{{n.apellidoautor}}</td>
+            <td>{{n.genero}}</td>
+            <td>{{n.precio}}</td>
+            <td><a href="{% url 'editarlibros' n.id %}">Editar</a></td>
+            <td><a href="{% url 'eliminalibros' n.id %}">Borrar</a></td>
+            
+        </tr>
+        {% endfor %}        
+
+       
+        </tbody>
+      </table>
+      <button>
+
+        <a href="alta_libros">Agregar otro libro</a>
+      </button>
+
+{% endblock %}
